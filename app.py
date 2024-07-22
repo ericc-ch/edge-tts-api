@@ -128,10 +128,10 @@ async def generate_tts(task_id, text, voice, subtitle, base_url):
             file.write(submaker.generate_subs())
 
     tasks[task_id]["status"] = "done"
-    tasks[task_id]["url"] = base_url + "files/" + os.path.basename(output_file)
+    tasks[task_id]["url"] = base_url + OUTPUT_DIR + "/" + os.path.basename(output_file)
 
 
-@app.route("/files/<filename>")
+@app.route("/" + OUTPUT_DIR + "/<filename>")
 @require_api_key
 def serve_file(filename):
     return send_from_directory(OUTPUT_DIR, filename)
