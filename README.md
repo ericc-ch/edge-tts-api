@@ -19,6 +19,13 @@ python3 -m venv .venv
 
 ```
 
+Activate the virtual environment
+
+```bash
+. .venv/bin/activate
+
+```
+
 Install the requirements
 
 ```bash
